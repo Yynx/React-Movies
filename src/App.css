@@ -1,22 +1,73 @@
 .App {
-  text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #E9ECF5;
 }
 
-.App-logo {
-  height: 40vmin;
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 20px;
+    background-color: #993955;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav > a {
+    color: #CCD6EB;
 }
 
-.App-link {
-  color: #09d3ac;
+.selected {
+    font-weight: bold; /* makes NavLink go bold when you are currently on that page */
 }
+
+a {
+    text-decoration: none;
+    color: #993955;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    text-shadow: 2px 2px grey;
+    background-color: #E9ECF5;
+}
+
+.search {
+    background-color:#CCD6EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+
+.movie-card {
+    background-color: #CCD6EB;
+    padding: 7px;
+    margin: 20px auto;
+    width: 17%;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-box-shadow: 0px 3px 33px -8px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 3px 33px -8px rgba(0,0,0,0.6);
+    box-shadow: 0px 3px 33px -8px rgba(0,0,0,0.6);
+}
+  
+h2 {
+    font-size: 18px;
+}
+
+.movie {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
