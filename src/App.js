@@ -10,7 +10,6 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Home from './components/Home';
 import Movies from './components/Movies';
-import MovieCard from './components/MovieCard';
 import MovieDetails from './components/MovieDetails';
 import Contact from './components/Contact';
 import NotFoundPage from './components/NotFoundPage';
@@ -30,7 +29,7 @@ class App extends React.Component {
     this.setState({ searchTerm : event.target.value })
   }
 
-  // Event handler for fetching movies related to the search term
+  // Fetch movies related to the search term
   handleSubmit = (event) => {
     event.preventDefault(); // Prevent page from refreshing
 
@@ -38,9 +37,8 @@ class App extends React.Component {
       .then(response => {
         this.setState({ movies: response.data['Search']});
         console.log(response.data['Search']);
-        // redirect to home
-      }
-    );
+        // To do: add functionality to make this redirect to home
+      });
   }
 
   render () {

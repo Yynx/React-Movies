@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router";
 const axios = require('axios');
 
@@ -7,6 +7,10 @@ const MovieDetails = () => {
     let {id} = useParams();
 
     const [movie, setMovie] = useState({});
+
+    useEffect(() => {
+        fetchSpecificMovie();
+    }, []);
 
     // Another fetch to get details of the SPECIFIC movie by IMDb ID
     const fetchSpecificMovie = () => {
@@ -17,8 +21,6 @@ const MovieDetails = () => {
             // console.log(movie)
         });
     }
-
-    fetchSpecificMovie();
 
     return (
         <div className="movie">
