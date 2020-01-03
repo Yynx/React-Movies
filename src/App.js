@@ -38,6 +38,7 @@ class App extends React.Component {
       .then(response => {
         this.setState({ movies: response.data['Search']});
         console.log(response.data['Search']);
+        // redirect to home
       }
     );
   }
@@ -66,7 +67,7 @@ class App extends React.Component {
 
           {/* Everything outside Switch shows on every page */}
           <Switch>
-            <Route exact path='/' component={Home} />
+            <Route exact path='/' component={() => <Home movies={this.state.movies} />}/>
             <Route path='/contact' component={Contact} />
 
           {/* How can I go to a route called /movie on submit, and display Movies component (where mapping takes place) on that route?  */}
@@ -74,7 +75,7 @@ class App extends React.Component {
             <Route exact path='/movie/:id' component={MovieDetails} />
             <Route component={NotFoundPage} />
           </Switch>
-          <Movies movies={this.state.movies} />
+
         </div>
       </Router>
     )
