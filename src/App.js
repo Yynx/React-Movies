@@ -11,7 +11,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Movies from './components/Movies';
 import MovieDetails from './components/MovieDetails';
-import Contact from './components/Contact';
+import Random from './components/Random';
 import NotFoundPage from './components/NotFoundPage';
 const axios = require('axios');
 
@@ -25,13 +25,13 @@ class App extends React.Component {
   }
 
   // Sets 'searchTerm' state to the entered input
-  handleChange = (event) => {
-    this.setState({ searchTerm : event.target.value })
+  handleChange = (e) => {
+    this.setState({ searchTerm : e.target.value })
   }
 
   // Fetch movies related to the search term
-  handleSubmit = (event) => {
-    event.preventDefault(); // Prevent page from refreshing
+  handleSubmit = (e) => {
+    e.preventDefault(); // Prevent page from refreshing
 
     axios.get(`http://www.omdbapi.com/?apiKey=2cb2d6d8&s=${this.state.searchTerm}&type=movie`)
       .then(response => {
@@ -39,6 +39,9 @@ class App extends React.Component {
         console.log(response.data['Search']);
         // To do: add functionality to make this redirect to home
       });
+
+    e.target.reset();
+      
   }
 
   render () {
@@ -66,7 +69,7 @@ class App extends React.Component {
           {/* Everything outside Switch shows on every page */}
           <Switch>
             <Route exact path='/' component={() => <Home movies={this.state.movies} />}/>
-            <Route path='/contact' component={Contact} />
+            <Route path='/random' component={Random} />
 
           {/* How can I go to a route called /movie on submit, and display Movies component (where mapping takes place) on that route?  */}
             <Route exact path='/movie' component={Movies} />

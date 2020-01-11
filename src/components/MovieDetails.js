@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const MovieDetails = () => {
 
-    let {id} = useParams();
+    let {id} = useParams(); // instead of using useParams, can also just use {match.params.id}
 
     const [movie, setMovie] = useState({});
 
@@ -23,7 +23,7 @@ const MovieDetails = () => {
     }
 
     return (
-        <div className="movie">
+        <div className="movie-details">
             <img src={movie.Poster} alt={movie.Title}></img>
             <h1>Name of Movie: {movie.Title}</h1>
             <p>Year of release: {movie.Year}</p>
@@ -39,7 +39,6 @@ const MovieDetails = () => {
     )
 }
 
-// instead of using useParams, can also just use {match.params.id}
 
 // http://www.omdbapi.com/?i=tt3707958&plot=full&apiKey=2cb2d6d8&s
 

@@ -47,11 +47,16 @@ a {
     height: 70px;
 }
 
+.movies { /* the container on the homepage which maps the individual MovieCards */
+    display: flex;
+    flex-direction: row;
+}
+
 .movie-card {
     background-color: #CCD6EB;
     padding: 7px;
-    margin: 20px auto;
-    width: 17%;
+    margin: 20px;
+    width: 220px;
     border-radius: 12px;
     cursor: pointer;
     text-align: center;
@@ -64,10 +69,11 @@ h2 {
     font-size: 18px;
 }
 
-.movie {
+.movie-details {
     background-color: lightblue;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
 }
 
